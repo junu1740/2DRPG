@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 132878243}
   - component: {fileID: 132878242}
   - component: {fileID: 132878247}
+  - component: {fileID: 132878248}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Untagged
@@ -316,9 +317,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5eef80c25efdf94db3cbfea72646d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 10
-  rb: {fileID: 0}
+--- !u!114 &132878248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132878241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768278455d36ca14d97939285e15ad4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 4
 --- !u!1 &144562598
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +480,7 @@ GameObject:
   - component: {fileID: 589666391}
   - component: {fileID: 589666390}
   - component: {fileID: 589666389}
+  - component: {fileID: 589666394}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -636,6 +648,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &589666394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589666388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768278455d36ca14d97939285e15ad4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 4
 --- !u!1 &1239415050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1165,7 @@ GameObject:
   - component: {fileID: 2022449391}
   - component: {fileID: 2022449390}
   - component: {fileID: 2022449389}
+  - component: {fileID: 2022449394}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Untagged
@@ -1307,6 +1333,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2022449394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022449388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768278455d36ca14d97939285e15ad4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
