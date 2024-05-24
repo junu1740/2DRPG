@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class SelectCharacter : MonoBehaviour
@@ -11,28 +14,70 @@ public class SelectCharacter : MonoBehaviour
     public Image CharImage;
 
     [Header("Character")]
-    public GameObject[] charcters;
+    public GameObject[] characters;
+    public CharacterInfo[] CharacterInfos;
     private int charIndex = 0;
 
+    [Header("GameStart")]
+    public GameObject Gamestart;
+    public Text GameCount;
+    private bool isPlayBtnClicked = false;
+    private float gameCount = 3f;
+
+    public static string CharacterName;
+
+    private void Update()
+    {
+        if (isPlayBtnClicked)
+        {
+            gameCount -= Time.deltaTime;
+            if(gameCount < 0)
+            {
+                SceneManager.LoadScene("Main");
+            }
+            GameCount.text = $"It's time to go game¢¾¢¾¢¾. \n  {gameCount:F1}";
+        }
+    }
+
+    public void PlayBtn()
+    {
+        Gamestart.SetActive(true);
+        isPlayBtnClicked=true;
+        CharacterName = characters[charIndex].name;
+    }
     public void SelectCharacterBtn(string btnName)
     {
-        charcters[charIndex].SetActive(false);
+        characters[charIndex].SetActive(false);
         if (btnName == "Next")
         {
             charIndex++;
-            charIndex = charIndex % charcters.Length;
+            charIndex = charIndex % characters.Length;
         }
 
         if(btnName == "Prev")
         {
             charIndex--;
-            charIndex = charIndex % charcters.Length;
-            charIndex = charIndex < 0 ? charIndex + charcters.Length : charIndex;
+            charIndex = charIndex % characters.Length;
+            charIndex = charIndex < 0 ? charIndex + characters.Length : charIndex;
         }
-
-        Debug.Log($"CharIndex : {charIndex}");
-        charcters[charIndex].SetActive(true);
+        characters[charIndex].SetActive(true);
+        SetPanelInfo();
     }
 
+    private void SetPanelInfo()
+    {
+        Name1.text = CharacterInfos[charIndex].Name;
+        Feature1.text = CharacterInfos[charIndex].Feature;
+        CharImage.sprite = characters[charIndex].GetComponent<SpriteRenderer>().sprite;
+      
 
+
+    }
+
+    
+
+    private void Start()
+    {
+        SetPanelInfo();
+    }
 }
