@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public float PlayerHp = 100f;
     public float PlayerExp = 1f;
 
+    
     private void Awake()
     {
         if (Instance == null)

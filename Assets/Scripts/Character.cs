@@ -1,5 +1,8 @@
+using System;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
@@ -7,6 +10,9 @@ public class Character : MonoBehaviour
     public float JumpPower = 4f;
 
     private bool isFloor;
+    private bool isLadder;
+    private bool isClimbing;
+    private float inputVertical;
     private bool justJump, justAttack;
     public GameObject AttackObj;
 
@@ -34,6 +40,24 @@ public class Character : MonoBehaviour
             isFloor = false;
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ladder")
+        {
+            isLadder = true;
+            Debug.Log("1");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ladder")
+        {
+            isLadder = false;
+            isClimbing = false;
+        }
+    }
+
 
     private void Start()
     {
@@ -48,13 +72,36 @@ public class Character : MonoBehaviour
         Move();
         JumpCheck();
         AttackCheck();
+        ClimbingCHeck();
     }
     private void FixedUpdate()
     {
         Jump();
         Attack();
+        Climbing();
     }
 
+    void ClimbingCHeck()
+    {
+        inputVertical = Input.GetAxis("Vertical");
+        if (isLadder && Math.Abs(inputVertical) > 0)
+        {
+            isClimbing = true;
+        }
+    }
+    void Climbing()
+    {
+        if (isClimbing)
+        {
+            rigidbody2d.gravityScale = 0f;
+            rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, inputVertical * Speed);
+        }
+        else
+        {
+            rigidbody2d.gravityScale = 1f;
+        }
+    }
+    //АјАн
     private void Attack()
     {
         if (justAttack)
@@ -63,12 +110,13 @@ public class Character : MonoBehaviour
             animator.SetTrigger("Attack");
             audioSource.PlayOneShot(AttackClip);
 
-            if(gameObject.name == "Warrior")
+            if(gameObject.name == "Warrior(Clone)")
             {
                 AttackObj.SetActive(true);
                 Invoke("SetAttackInactive", 0.5f);
+                return;
             }
-            else
+            
             {
                 if (spriteRenderer.flipX)
                 {
@@ -97,7 +145,7 @@ public class Character : MonoBehaviour
     {
         if (isFloor)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetMouseButton((int)MouseButton.Left))
             {
                 justAttack = true;
                 audioSource.PlayOneShot(JumpClip);

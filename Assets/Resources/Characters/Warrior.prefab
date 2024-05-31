@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1531689975813317563}
   m_Layer: 0
   m_Name: AttackObj
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 10.412664, y: -2.9065168}
+  m_Offset: {x: 11.468479, y: -2.6910443}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -77,7 +77,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.4267988, y: 3.3139253}
+  m_Size: {x: 2.3925323, y: 2.0210924}
   m_EdgeRadius: 0
 --- !u!114 &3138482015194508447
 MonoBehaviour:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 4633890451775461599}
   m_Layer: 0
   m_Name: Warrior
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,9 +316,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 4
   JumpPower: 6
-  AttackObj: {fileID: 0}
+  AttackObj: {fileID: 4020651120080494366}
   JumpClip: {fileID: 8300000, guid: 006346f55c2871042af9cce7119879a6, type: 3}
-  AttackClip: {fileID: 0}
+  AttackClip: {fileID: 8300000, guid: 55e6379735ee6944697daaeddbf8ce46, type: 3}
   AttckObj: {fileID: 4020651120080494366}
   AttackSpeed: 3
 --- !u!82 &4633890451775461599
