@@ -12,8 +12,15 @@ public class GameManager : MonoBehaviour
 
     public float PlayerHp = 100f;
     public float PlayerExp = 1f;
+    public int Coin;
 
-    
+    public GameObject SpawnPlayer(Transform spawnPos)
+    {
+        GameObject playerPrefab = Resources.Load<GameObject>("Characters/" + Name);
+        GameObject player = Instantiate(playerPrefab,spawnPos.position, spawnPos.rotation); 
+
+        return player;
+    }
     private void Awake()
     {
         if (Instance == null)

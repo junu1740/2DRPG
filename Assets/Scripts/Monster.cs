@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -51,15 +52,20 @@ public class Monster : MonoBehaviour
         MonAnimator.SetTrigger("Die");
         GameManager.Instance.PlayerExp += Exp;
 
-        int itemRandom = Random.Range(0, ItemObj.Length * 2);
-        if (itemRandom <= ItemObj.Length)
-        {
-            Instantiate(ItemObj[itemRandom], new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-        }
 
         GetComponent<Collider2D>().enabled = false;
         Destroy(gameObject, 1.5f);
     }
+       private void OnDestroy()
+        {
+        int itemRandom = Random.Range(0, ItemObj.Length * 1);
+        if (itemRandom < ItemObj.Length)
+        {
+            Instantiate(ItemObj[itemRandom], new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+        }
+
+        }
+
     private void Update()
     {
         MonsterMove();
