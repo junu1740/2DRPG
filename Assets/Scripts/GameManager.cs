@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public float PlayerHp = 100f;
     public float PlayerExp = 1f;
     public int Coin;
+    public int MonsterCount;
 
     public GameObject SpawnPlayer(Transform spawnPos)
     {

@@ -11,15 +11,17 @@ public class PlayerUI : MonoBehaviour
     public Slider HpSlider;
     private GameObject player;
     public GameObject spawnPos;
+    public Text CoinText;
 
     private void Start()
     {
        IDText.text = GameManager.Instance.UserID;
         player = GameManager.Instance.SpawnPlayer(spawnPos.transform);
-       
+
     }
     private void Update()
     {
+        CoinText.text = GameManager.Instance.Coin.ToString();
         display();
     }
 

@@ -20,7 +20,7 @@ public class Monster : MonoBehaviour
 
     private void Start()
     {
-
+        GameManager.Instance.MonsterCount++;
     MonAnimator = this.GetComponent<Animator>();
     }
 
