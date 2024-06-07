@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
@@ -48,6 +48,7 @@ public class Monster : MonoBehaviour
     }
     void MonsterDie()
     {
+        GameManager.Instance.MonsterCount--;
         isDie = true;
         MonAnimator.SetTrigger("Die");
         GameManager.Instance.PlayerExp += Exp;

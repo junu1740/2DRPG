@@ -12,6 +12,7 @@ public class PlayerUI : MonoBehaviour
     private GameObject player;
     public GameObject spawnPos;
     public Text CoinText;
+    public Text MonsterText;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class PlayerUI : MonoBehaviour
     private void Update()
     {
         CoinText.text = GameManager.Instance.Coin.ToString();
+        MonsterText.text = GameManager.Instance.MonsterCount.ToString();
         display();
     }
 
