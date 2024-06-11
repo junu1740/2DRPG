@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
+    public static Character Instance;
     public float Speed = 4f;
     public float JumpPower = 4f;
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+
+    public float CoolTIme = 3f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
@@ -25,6 +27,28 @@ public class Item : MonoBehaviour
                 GameManager.Instance.Coin += 100;
                 Debug.Log("»Ò¿Á ƒ⁄¿Œ »πµÊ");
                 Debug.Log("Player Coin :" + GameManager.Instance.Coin);
+                Destroy(gameObject);
+            }
+            if(gameObject.tag == "Speed")
+            {
+                Character.Instance.Speed += 5;
+                CoolTIme -= Time.deltaTime;
+                
+                if(CoolTIme == 0)
+                {
+                    Character.Instance.Speed -= 5;
+                }
+                Destroy(gameObject);
+            }
+            if (gameObject.tag == "Strength")
+            {
+                Attack.Instance.AttackDamage += 5;
+                CoolTIme -= Time.deltaTime;
+
+                if (CoolTIme == 0)
+                {
+                    Attack.Instance.AttackDamage -= 5;
+                }
                 Destroy(gameObject);
             }
 
