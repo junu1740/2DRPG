@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa111e11f34b9654eb980e2ed85fca83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 10
+  Hp: 50
   Damage: 5
   Exp: 2
   Movespeed: 3

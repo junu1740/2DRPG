@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
-    public static Character Instance;
     public float Speed = 4f;
     public float JumpPower = 4f;
+    public float oriSpeed;
+
+    public float AttackPower = 5f;
 
     private bool isFloor;
     private bool isLadder;
@@ -26,6 +28,25 @@ public class Character : MonoBehaviour
 
     public GameObject AttckObj;
     public float AttackSpeed = 3f;
+
+
+
+    private static Character _instance;
+
+    public static Character Instance
+    { get { return _instance; } }
+
+    // GameManager 초기화
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject); // 이미 인스턴스가 존재하면 새로 생성된 것을 파괴
+            return;
+        }
+        _instance = this;
+        DontDestroyOnLoad(this.gameObject); // 새로운 씬으로 전환되어도 파괴되지 않도록 설정
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -66,6 +87,7 @@ public class Character : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        oriSpeed = Speed;
     }
 
     void Update()
@@ -78,10 +100,16 @@ public class Character : MonoBehaviour
     private void FixedUpdate()
     {
         Jump();
-        Attack();
+        _Attack();
         Climbing();
     }
 
+    public void spood()
+    {
+        Speed = oriSpeed += 3;
+    }
+
+  
     void ClimbingCHeck()
     {
         inputVertical = Input.GetAxis("Vertical");
@@ -103,7 +131,7 @@ public class Character : MonoBehaviour
         }
     }
     //공격
-    private void Attack()
+    private void _Attack()
     {
         if (justAttack)
         {
