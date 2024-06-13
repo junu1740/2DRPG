@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4143818103285816899}
   - component: {fileID: 1580035600749409159}
+  - component: {fileID: 8260628762021204355}
   - component: {fileID: 6697247729346193288}
   - component: {fileID: 8555548345109726015}
   - component: {fileID: 6300104376655011343}
@@ -89,6 +90,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8260628762021204355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8568628588762262480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441520452cb891840806343503d5dbad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &6697247729346193288
 Animator:
   serializedVersion: 5
@@ -196,9 +209,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 4
   JumpPower: 6
+  oriSpeed: 0
+  AttackPower: 5
   AttackObj: {fileID: 0}
   JumpClip: {fileID: 8300000, guid: 006346f55c2871042af9cce7119879a6, type: 3}
-  AttackClip: {fileID: 8300000, guid: ef8f4d6de1d9b3049a795b29b912eca1, type: 3}
+  AttackClip: {fileID: 8300000, guid: 99273a3c30c2f764fbabc16f3d6a82a4, type: 3}
   AttckObj: {fileID: 6000315211967058656, guid: eebc0ca57b8f09345bcfc5b68e5eadae, type: 3}
   AttackSpeed: 3
 --- !u!82 &86113439931616824

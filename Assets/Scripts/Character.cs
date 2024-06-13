@@ -27,7 +27,7 @@ public class Character : MonoBehaviour
     public AudioClip AttackClip;
 
     public GameObject AttckObj;
-    public float AttackSpeed = 3f;
+    public float AttackSpeed = 7f;
 
 
 

@@ -12,6 +12,7 @@ TagManager:
   - HJ
   - Speed
   - Strength
+  - Teleporter
   layers:
   - Default
   - TransparentFX

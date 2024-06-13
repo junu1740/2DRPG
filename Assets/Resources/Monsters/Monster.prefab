@@ -48,9 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 50
-  Damage: 5
-  Exp: 2
-  Movespeed: 3
+  Damage: 10
+  Exp: 10
+  Movespeed: 5
   ItemObj:
   - {fileID: 5502908937926017640, guid: 1a05b3ed63b39f241bf358133c5ece9e, type: 3}
   - {fileID: 6393348906710708402, guid: af13b9ed5ee3bff4784f1ff44c2a3ad7, type: 3}

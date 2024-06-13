@@ -24,10 +24,14 @@ public class SelectCharacter : MonoBehaviour
     private bool isPlayBtnClicked = false;
     private float gameCount = 3f;
 
+    [Header("Text")]
+    public Text IDText;
+
     public static string CharacterName;
 
     private void Update()
     {
+        IDText.text = GameManager.Instance.UserID;
         if (isPlayBtnClicked)
         {
             gameCount -= Time.deltaTime;

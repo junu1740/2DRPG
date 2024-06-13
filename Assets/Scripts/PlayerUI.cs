@@ -16,7 +16,7 @@ public class PlayerUI : MonoBehaviour
     public Text SpeedText;
     public Text HimText;
     public Text TimeText;
-    public float Sec = 50;
+    public float Sec = 0 ;
     public float Min = 0;                
 
 
