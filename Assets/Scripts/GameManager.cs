@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public string Name;
     public string UserID;
+    public GameObject player;
 
     public float PlayerHp = 100f;
     public float PlayerExp = 1f;
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject SpawnPlayer(Transform spawnPos)
     {
         GameObject playerPrefab = Resources.Load<GameObject>("Characters/" + Name);
-        GameObject player = Instantiate(playerPrefab,spawnPos.position, spawnPos.rotation); 
+        player = Instantiate(playerPrefab,spawnPos.position, spawnPos.rotation); 
 
         return player;
     }
