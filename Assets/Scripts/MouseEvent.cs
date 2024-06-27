@@ -7,6 +7,7 @@ public class MouseEvent : MonoBehaviour
 
     public GameObject PotionUI;
     public GameObject PowerUI;
+    public GameObject BattelUI;
     void Start()
     {
         
@@ -36,7 +37,7 @@ public class MouseEvent : MonoBehaviour
                 }
                 if (hit.collider.gameObject.name == "Drink")
                 {
-                    Debug.Log("3");
+                   BattelUI.gameObject.SetActive(true);
                 }
 
             }

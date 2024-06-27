@@ -200,7 +200,7 @@ MonoBehaviour:
   JumpClip: {fileID: 8300000, guid: 006346f55c2871042af9cce7119879a6, type: 3}
   AttackClip: {fileID: 8300000, guid: ef8f4d6de1d9b3049a795b29b912eca1, type: 3}
   AttckObj: {fileID: 6000315211967058656, guid: eebc0ca57b8f09345bcfc5b68e5eadae, type: 3}
-  AttackSpeed: 3
+  AttackSpeed: 10
 --- !u!82 &86113439931616824
 AudioSource:
   m_ObjectHideFlags: 0
